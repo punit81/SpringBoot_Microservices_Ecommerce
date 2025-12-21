@@ -4,6 +4,9 @@ Start KeyCloak by:
 
 Navigate to KeyCloak/Bin directory launch cmd and give command : kc.bat startdev
 
+Admin USER/PASSWORD FOR KEYCLOAK: root/root
+
+Eureka server user/password: USER/password
 Then open postman and import collections from Postman_Collections_TO_import_and_Test folder
 
 Start DiscoveryService
