@@ -1,0 +1,19 @@
+{
+	"info": {
+		"_postman_id": "9c987a1f-78c8-4397-ad86-554c48e9588c",
+		"name": "Inventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40341494",
+		"_collection_link": "https://the-superhuman.postman.co/workspace/My-Workspace~ae59992f-f6c3-4abf-8c85-7acfce6e7938/collection/40341494-9c987a1f-78c8-4397-ad86-554c48e9588c?action=share&source=collection_link&creator=40341494"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

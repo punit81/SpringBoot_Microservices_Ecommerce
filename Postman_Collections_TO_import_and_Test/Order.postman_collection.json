@@ -1,0 +1,19 @@
+{
+	"info": {
+		"_postman_id": "db008b6c-b94b-4723-8358-d5fedf558833",
+		"name": "Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40341494",
+		"_collection_link": "https://the-superhuman.postman.co/workspace/My-Workspace~ae59992f-f6c3-4abf-8c85-7acfce6e7938/collection/40341494-db008b6c-b94b-4723-8358-d5fedf558833?action=share&source=collection_link&creator=40341494"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
