@@ -1,0 +1,59 @@
+2025-12-21 04:16:25.603448+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]order (id varchar(255) not null, order_number integer, primary key (id))"; expected "identifier"; SQL statement:
+create table order (id varchar(255) not null, order_number integer, primary key (id)) [42001-240]
+2025-12-21 04:16:25.614263+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists [*]order drop constraint if exists UKl6nypnmytysy2wg9exrj5pkn5"; expected "identifier"; SQL statement:
+alter table if exists order drop constraint if exists UKl6nypnmytysy2wg9exrj5pkn5 [42001-240]
+2025-12-21 04:16:25.616262+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists [*]order add constraint UKl6nypnmytysy2wg9exrj5pkn5 unique (order_number)"; expected "identifier"; SQL statement:
+alter table if exists order add constraint UKl6nypnmytysy2wg9exrj5pkn5 unique (order_number) [42001-240]
+2025-12-21 04:16:25.616262+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists order_line_item add constraint FKbtqjrk41poi3e87lol3fw3q8e foreign key (order_id) references [*]order"; expected "identifier"; SQL statement:
+alter table if exists order_line_item add constraint FKbtqjrk41poi3e87lol3fw3q8e foreign key (order_id) references order [42001-240]
+2025-12-21 04:17:19.787941+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select o1_0.id,o1_0.order_number from [*]order o1_0"; expected "identifier"; SQL statement:
+select o1_0.id,o1_0.order_number from order o1_0 [42001-240]
+2025-12-21 04:19:09.445176+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]order (id varchar(255) not null, order_number integer, primary key (id))"; expected "identifier"; SQL statement:
+create table order (id varchar(255) not null, order_number integer, primary key (id)) [42001-240]
+2025-12-21 04:19:09.451173+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists [*]order drop constraint if exists UKl6nypnmytysy2wg9exrj5pkn5"; expected "identifier"; SQL statement:
+alter table if exists order drop constraint if exists UKl6nypnmytysy2wg9exrj5pkn5 [42001-240]
+2025-12-21 04:19:09.452238+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists [*]order add constraint UKl6nypnmytysy2wg9exrj5pkn5 unique (order_number)"; expected "identifier"; SQL statement:
+alter table if exists order add constraint UKl6nypnmytysy2wg9exrj5pkn5 unique (order_number) [42001-240]
+2025-12-21 04:19:09.453173+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists order_line_item add constraint FKbtqjrk41poi3e87lol3fw3q8e foreign key (order_id) references [*]order"; expected "identifier"; SQL statement:
+alter table if exists order_line_item add constraint FKbtqjrk41poi3e87lol3fw3q8e foreign key (order_id) references order [42001-240]
+2025-12-21 04:19:14.790931+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select o1_0.id,o1_0.order_number from [*]order o1_0"; expected "identifier"; SQL statement:
+select o1_0.id,o1_0.order_number from order o1_0 [42001-240]
+2025-12-21 04:22:25.594181+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]order (id varchar(255) not null, order_number integer, primary key (id))"; expected "identifier"; SQL statement:
+create table order (id varchar(255) not null, order_number integer, primary key (id)) [42001-240]
+2025-12-21 04:22:25.600215+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists [*]order drop constraint if exists UKl6nypnmytysy2wg9exrj5pkn5"; expected "identifier"; SQL statement:
+alter table if exists order drop constraint if exists UKl6nypnmytysy2wg9exrj5pkn5 [42001-240]
+2025-12-21 04:22:25.600215+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists [*]order add constraint UKl6nypnmytysy2wg9exrj5pkn5 unique (order_number)"; expected "identifier"; SQL statement:
+alter table if exists order add constraint UKl6nypnmytysy2wg9exrj5pkn5 unique (order_number) [42001-240]
+2025-12-21 04:22:25.601098+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists order_line_item add constraint FKbtqjrk41poi3e87lol3fw3q8e foreign key (order_id) references [*]order"; expected "identifier"; SQL statement:
+alter table if exists order_line_item add constraint FKbtqjrk41poi3e87lol3fw3q8e foreign key (order_id) references order [42001-240]
+2025-12-21 04:22:31.296473+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select o1_0.id,o1_0.order_number from [*]order o1_0"; expected "identifier"; SQL statement:
+select o1_0.id,o1_0.order_number from order o1_0 [42001-240]
+2025-12-21 06:56:25.078301+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ORDER_TABLE"; SQL statement:
+ORDER_TABLE [42000-240]
+2025-12-21 06:56:36.741474+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM ORDER_TABLE \000d\000a\000d\000a[*]SELECT * FROM ORDER_LINE_ITEM"; SQL statement:
+SELECT * FROM ORDER_TABLE 
+
+SELECT * FROM ORDER_LINE_ITEM [42000-240]
+2025-12-21 07:23:09.585579+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM ORDER_LINE_ITEM ORDER_TABLE [*]ORDER_TABLE"; SQL statement:
+SELECT * FROM ORDER_LINE_ITEM ORDER_TABLE ORDER_TABLE [42000-240]
+2025-12-21 14:23:10.521348+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM ORDER_TABLE ORDER_TABLE [*]ORDER_LINE_ITEM"; SQL statement:
+SELECT * FROM ORDER_TABLE ORDER_TABLE ORDER_LINE_ITEM [42000-240]
