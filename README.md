@@ -17,4 +17,9 @@ Start ApiGateway
 
 Proceed with testing.
 
+Download Zipkin from: https://repo1.maven.org/maven2/io/zipkin/zipkin-server/3.5.1/zipkin-server-3.5.1-exec.jar
+
+launch cmd from folder containing zipkin-server-3.5.1-exec.jar and give the following commands:
+
+java -jar zipkin-server-3.5.1-exec.jar
 
