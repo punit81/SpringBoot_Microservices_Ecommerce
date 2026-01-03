@@ -19,10 +19,11 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 	
 	@Bean
-	public SecurityFilterChain SecurityConfig(HttpSecurity http) throws Exception {
+	public SecurityFilterChain securityConfigurer(HttpSecurity http) throws Exception {
 		http
 			.csrf(csrf -> csrf.disable())
-			.authorizeHttpRequests(auth -> auth.anyRequest().authenticated()
+			.authorizeHttpRequests(auth -> auth.requestMatchers("/eureka/peerreplication/batch/**").permitAll()
+					.anyRequest().authenticated()
 					)
 			.httpBasic(Configurer -> Customizer.withDefaults());
 		return http.build();

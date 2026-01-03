@@ -50,12 +50,12 @@ public class InventoryController {
     @GetMapping("/inventories/availableitems")
     @ResponseStatus(HttpStatus.OK)
     public Map<String, Boolean> getAvaliableItems(@RequestParam List<String> skuCode) {
-        try {
+      /*  try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} // Simulating delay for testing purposes
+		} // Simulating delay for testing purposes*/
     	return inventoryService.getAvailabilityBySkuCodes(skuCode);
     }
 
