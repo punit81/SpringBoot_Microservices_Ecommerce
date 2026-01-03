@@ -3,7 +3,6 @@ package com.orderservice.service;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.concurrent.Executor;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
@@ -16,6 +15,8 @@ import com.orderservice.model.Order;
 import com.orderservice.model.OrderLineItem;
 import com.orderservice.repo.OrderRepository;
 
+import brave.Span;
+import brave.Tracer;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -23,6 +24,7 @@ import lombok.RequiredArgsConstructor;
 public class OrderService {
 	private final OrderRepository orderRepository;
 	private final WebClient.Builder webClientBuilder;
+	private final Tracer tracer;
 	//private final Executor orderExecutor;
     public void createOrder(OrderRequestDto requestDto) {
     	Order order = Order.builder()
@@ -39,18 +41,28 @@ public class OrderService {
     	List<String>skuCodes=order.getOrderLineItems().stream()
 				.map(OrderLineItem::getSkuCode)
 				.toList();
-    	Map<String, Boolean> inventoryResponse = webClientBuilder.build().get()
-    							.uri("lb://INVENTORYSERVICE/api/inventories/availableitems",
-										uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
-    							.retrieve().bodyToMono(new ParameterizedTypeReference<Map<String,Boolean>>(){}).block();
-    	boolean allProductsAvaliable=inventoryResponse.values().stream().allMatch(Boolean::booleanValue);
-    	if(!allProductsAvaliable) {
-			throw new RuntimeException("Product is not available in inventory, please try again later");
-		}
-    	order.getOrderLineItems().forEach(item -> {
-    		item.setOrder(order);
-    	});
-    	orderRepository.save(order);
+    	Span span = this.tracer.nextSpan().name("InventoryServiceLookup");
+    	try(Tracer.SpanInScope ws =this.tracer.withSpanInScope(span.start())){
+    		Map<String, Boolean> inventoryResponse = webClientBuilder.build().get()
+    				.uri("lb://INVENTORYSERVICE/api/inventories/availableitems",
+    						uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
+    				.retrieve().bodyToMono(new ParameterizedTypeReference<Map<String,Boolean>>(){}).block();
+    		boolean allProductsAvaliable=inventoryResponse.values().stream().allMatch(Boolean::booleanValue);
+    		if(!allProductsAvaliable) {
+    			throw new RuntimeException("Product is not available in inventory, please try again later");
+    		}
+    		order.getOrderLineItems().forEach(item -> {
+    			item.setOrder(order);
+    		});
+    		orderRepository.save(order);
+    	}
+    	finally {
+
+    		span.finish();
+    	}
+    	
+    	
+    	
     }
 	
     
